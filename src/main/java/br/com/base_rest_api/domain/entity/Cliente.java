@@ -28,4 +28,10 @@ public class Cliente {
         this.situacao = SituacaoEnum.ATIVO;
     }
 
+    public Cliente(Long idCliente, String nome, String cpf, SituacaoEnum situacao) {
+        this.idCliente = idCliente;
+        this.nome = nome;
+        this.cpf = cpf;
+        this.situacao = situacao;
+    }
 }
