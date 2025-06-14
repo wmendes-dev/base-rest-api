@@ -22,25 +22,25 @@ public class ClienteController {
     private final ClienteService clienteService;
 
     @GetMapping
-    public ResponseEntity<Page<ClientePesquisaResponse>> pesquisar(@Nullable ClienteRequestParams clienteRequestParams, @Nullable Pageable pageable) {
+    public ResponseEntity<Page<ClientePesquisaResponse>> pesquisarClientes(@Nullable ClienteRequestParams clienteRequestParams, @Nullable Pageable pageable) {
         Page<ClientePesquisaResponse> clientePesquisaResponsePage = this.clienteService.pesquisarClientes(clienteRequestParams, pageable);
         return ResponseEntity.ok(clientePesquisaResponsePage);
     }
 
     @GetMapping("/{idCliente}")
-    public ResponseEntity<ClienteResponse> obter(@PathVariable Long idCliente) {
+    public ResponseEntity<ClienteResponse> obterCliente(@PathVariable Long idCliente) {
         ClienteResponse clienteResponse = this.clienteService.obterCliente(idCliente);
         return ResponseEntity.ok(clienteResponse);
     }
 
     @PostMapping
-    public ResponseEntity<ClienteResponse> criar(@RequestBody @Valid ClienteRequest clienteRequest) {
+    public ResponseEntity<ClienteResponse> criarCliente(@RequestBody @Valid ClienteRequest clienteRequest) {
         ClienteResponse clienteResponse = this.clienteService.criarCliente(clienteRequest);
         return ResponseEntity.status(HttpStatus.CREATED).body(clienteResponse);
     }
 
     @PutMapping("/{idCliente}")
-    public ResponseEntity<ClienteResponse> atualizar(@PathVariable Long idCliente, @RequestBody @Valid ClienteRequest clienteRequest) {
+    public ResponseEntity<ClienteResponse> atualizarCliente(@PathVariable Long idCliente, @RequestBody @Valid ClienteRequest clienteRequest) {
         ClienteResponse clienteResponse = this.clienteService.atualizarCliente(idCliente, clienteRequest);
         return ResponseEntity.ok(clienteResponse);
     }
