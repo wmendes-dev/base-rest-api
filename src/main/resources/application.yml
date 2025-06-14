@@ -1,0 +1,31 @@
+# H2 DATABASE
+spring:
+  datasource:
+    url: jdbc:h2:mem:baserestapidb
+    driver-class-name: org.h2.Driver
+    username: admin
+    password: ""
+  h2:
+    console:
+      enabled: true  # URL -> http://localhost:8080/h2-console
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: false
+    properties:
+      hibernate:
+        format_sql: true
+    defer-datasource-initialization: true
+
+# SWAGGER / OpenAPI
+springdoc:
+  swagger-ui:
+    operationsSorter: method  # URL -> http://localhost:8080/swagger-ui/index.html
+
+# JWT CONFIGURATION
+jwt:
+  secret: ${JWT_SECRET:secretParaTesteEmBaseRestApi123456}
+  accessToken:
+    expiration: 3600000 # 1 hora
+  refreshToken:
+    expiration: 604800000 # 7 dias
