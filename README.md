@@ -43,6 +43,6 @@ Este projeto é uma **prova de conceito (PoC)** de um sistema **PDV (Ponto de Ve
 Certifique-se de ter **Java 21** instalado.
 
 ```bash
-git clone https://github.com/seu-usuario/base-rest-api.git
+git clone https://github.com/wmendes-dev/base-rest-api.git
 cd base-rest-api
 ./mvnw spring-boot:run
