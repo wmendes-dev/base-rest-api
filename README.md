@@ -29,7 +29,8 @@ Este projeto é uma **prova de conceito (PoC)** de um sistema **PDV (Ponto de Ve
 
 ## 🗂️ Principais Funcionalidades
 
-- ✅ Cadastro de **Usuários** (autenticação/login)
+- ✅ Cadastro de **Usuários**
+- ✅ **Autenticação de Usuários** (login e geração de tokens JWT)
 - ✅ CRUD de **Clientes**
 - ✅ CRUD de **Produtos**
 - ✅ CRUD de **Vendas**
