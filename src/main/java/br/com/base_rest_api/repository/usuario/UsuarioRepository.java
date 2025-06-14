@@ -1,4 +1,4 @@
-package br.com.base_rest_api.repository;
+package br.com.base_rest_api.repository.usuario;
 
 import br.com.base_rest_api.domain.entity.Usuario;
 import org.springframework.data.jpa.repository.JpaRepository;

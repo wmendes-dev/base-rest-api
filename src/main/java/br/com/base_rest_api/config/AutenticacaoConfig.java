@@ -1,6 +1,6 @@
 package br.com.base_rest_api.config;
 
-import br.com.base_rest_api.repository.UsuarioRepository;
+import br.com.base_rest_api.repository.usuario.UsuarioRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

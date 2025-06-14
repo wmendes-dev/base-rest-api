@@ -1,5 +1,6 @@
 package br.com.base_rest_api.domain.entity;
 
+import br.com.base_rest_api.domain.enums.SituacaoEnum;
 import jakarta.persistence.*;
 import lombok.Data;
 
