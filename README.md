@@ -1,6 +1,6 @@
 # 📦 Base REST API
 
-Este projeto é uma **prova de conceito (PoC)** de um sistema **PDV (Ponto de Venda)**, desenvolvido em **Java 21** com **Spring Boot 3.2.6**. Foi criado com propósito didático e como parte do meu portfólio, para servir como base para outros projetos e demonstração de boas práticas no desenvolvimento de APIs REST.
+Este projeto é uma **prova de conceito (PoC)** de um sistema **PDV (Ponto de Venda)**, desenvolvido em **Java 21** com **Spring Boot 3.5.0**. Foi criado com propósito didático e como parte do meu portfólio, para servir como base para outros projetos e demonstração de boas práticas no desenvolvimento de APIs REST.
 
 ---
 
@@ -17,7 +17,7 @@ Este projeto é uma **prova de conceito (PoC)** de um sistema **PDV (Ponto de Ve
 
 ### 🛠️ Tecnologias
 - **Java 21**
-- **Spring Boot 3.2.6**
+- **Spring Boot 3.5.0**
 - **Spring Security** (Segurança e OAuth2 Resource Server)
 - **Spring Data JPA** (Persistência de dados)
 - **MapStruct** (Mapeamento entre entidades e DTOs)
