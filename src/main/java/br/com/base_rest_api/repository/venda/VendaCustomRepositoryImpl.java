@@ -65,7 +65,7 @@ public class VendaCustomRepositoryImpl implements VendaCustomRepository {
                     this.fromVenda.get("idVenda").alias("idVenda"),
                     this.fromVenda.get("dataEmissao").alias("dataEmissao"),
                     this.fromVenda.get("valorTotal").alias("valorTotal"),
-                    this.joinCliente.get("nome").alias("cliente")
+                    this.joinCliente.get("nomeRazaoSocial").alias("cliente")
             ));
 
             aplicarFiltros(querySelect, vendaRequestParams);
@@ -87,7 +87,7 @@ public class VendaCustomRepositoryImpl implements VendaCustomRepository {
 
             String cliente = vendaRequestParams.cliente();
             if (!ObjectUtils.isEmpty(cliente)) {
-                predicates.add(this.criteriaBuilder.like(this.joinCliente.get("nome"), "%" + cliente + "%"));
+                predicates.add(this.criteriaBuilder.like(this.joinCliente.get("nomeRazaoSocial"), "%" + cliente + "%"));
             }
 
             LocalDate dataInicio = vendaRequestParams.dataInicio();

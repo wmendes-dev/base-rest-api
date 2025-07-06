@@ -22,8 +22,8 @@ public class ClienteSpecification implements Specification<Cliente> {
     public Predicate toPredicate(Root<Cliente> root, CriteriaQuery<?> query, CriteriaBuilder criteriaBuilder) {
         List<Predicate> predicates = new ArrayList<>();
 
-        if (!ObjectUtils.isEmpty(this.clienteRequestParams.nome())) {
-            predicates.add(criteriaBuilder.like(root.get("nome"), "%" + this.clienteRequestParams.nome() + "%"));
+        if (!ObjectUtils.isEmpty(this.clienteRequestParams.nomeRazaoSocial())) {
+            predicates.add(criteriaBuilder.like(root.get("nomeRazaoSocial"), "%" + this.clienteRequestParams.nomeRazaoSocial() + "%"));
         }
 
         Predicate[] predicateArray = new Predicate[predicates.size()];

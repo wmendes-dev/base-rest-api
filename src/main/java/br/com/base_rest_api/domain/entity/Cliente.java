@@ -14,11 +14,11 @@ public class Cliente {
     @Column(name = "ID_CLIENTE")
     private Long idCliente;
 
-    @Column(name = "NOME", nullable = false)
-    private String nome;
-
     @Column(name = "CPF", nullable = false)
-    private String cpf;
+    private String cpfCnpj;
+
+    @Column(name = "NOME", nullable = false)
+    private String nomeRazaoSocial;
 
     @Enumerated(EnumType.STRING)
     @Column(name = "SITUACAO", nullable = false)
@@ -28,10 +28,10 @@ public class Cliente {
         this.situacao = SituacaoEnum.ATIVO;
     }
 
-    public Cliente(Long idCliente, String nome, String cpf, SituacaoEnum situacao) {
+    public Cliente(Long idCliente, String cpfCnpj, String nomeRazaoSocial, SituacaoEnum situacao) {
         this.idCliente = idCliente;
-        this.nome = nome;
-        this.cpf = cpf;
+        this.cpfCnpj = cpfCnpj;
+        this.nomeRazaoSocial = nomeRazaoSocial;
         this.situacao = situacao;
     }
 }

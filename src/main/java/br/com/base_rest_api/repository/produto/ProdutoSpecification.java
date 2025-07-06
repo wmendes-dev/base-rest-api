@@ -23,7 +23,7 @@ public class ProdutoSpecification implements Specification<Produto> {
         List<Predicate> predicates = new ArrayList<>();
 
         if (!ObjectUtils.isEmpty(this.produtoRequestParams.nome())) {
-            predicates.add(criteriaBuilder.like(root.get("nome"), "%" + this.produtoRequestParams.nome() + "%"));
+            predicates.add(criteriaBuilder.like(root.get("nomeRazaoSocial"), "%" + this.produtoRequestParams.nome() + "%"));
         }
 
         Predicate[] predicateArray = new Predicate[predicates.size()];

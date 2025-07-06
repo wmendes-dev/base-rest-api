@@ -41,7 +41,7 @@ class ClienteServiceTest {
     @Test
     void devePesquisarClientesComSucesso() {
         ClienteRequestParams clienteRequestParams = new ClienteRequestParams("Cliente 1");
-        Cliente cliente = new Cliente(1L, "Cliente 1", "12345678910", SituacaoEnum.ATIVO);
+        Cliente cliente = new Cliente(1L, "12345678910", "Cliente 1", SituacaoEnum.ATIVO);
         Pageable pageable = PageRequest.of(0, 10);
         Page<Cliente> clientePage = new PageImpl<>(List.of(cliente));
         ClientePesquisaResponse clientePesquisaResponse = new ClientePesquisaResponse(1L, "Cliente 1", "12345678910", SituacaoEnum.ATIVO);
@@ -64,7 +64,7 @@ class ClienteServiceTest {
 
     @Test
     void deveObterClienteComSucesso() {
-        Cliente cliente = new Cliente(1L, "Cliente 1", "12345678910", SituacaoEnum.ATIVO);
+        Cliente cliente = new Cliente(1L, "12345678910", "Cliente 1", SituacaoEnum.ATIVO);
         ClienteResponse clienteResponse = new ClienteResponse(1L, "Cliente 1", "12345678910");
 
         Mockito.when(this.clienteRepository.findById(1L)).thenReturn(Optional.of(cliente));
@@ -83,7 +83,7 @@ class ClienteServiceTest {
     @Test
     void deveCriarClienteComSucesso() {
         ClienteRequest clienteRequest = new ClienteRequest("Cliente 1", "12345678910", SituacaoEnum.ATIVO);
-        Cliente cliente = new Cliente(1L, "Cliente 1", "12345678910", SituacaoEnum.ATIVO);
+        Cliente cliente = new Cliente(1L, "12345678910", "Cliente 1", SituacaoEnum.ATIVO);
         ClienteResponse clienteCriadoResponse = new ClienteResponse(1L, "Cliente 1", "12345678910");
 
         Mockito.when(this.clienteMapper.converterParaCliente(clienteRequest)).thenReturn(cliente);
@@ -103,7 +103,7 @@ class ClienteServiceTest {
 
     @Test
     void deveAtualizarClienteComSucesso() {
-        Cliente cliente = new Cliente(1L, "Cliente 1", "12345678910", SituacaoEnum.ATIVO);
+        Cliente cliente = new Cliente(1L, "12345678910", "Cliente 1", SituacaoEnum.ATIVO);
         ClienteRequest clienteAtualizadoRequest = new ClienteRequest("Cliente 1 Atualizado", "12345678910", SituacaoEnum.ATIVO);
         ClienteResponse clienteAtualizadoResponse = new ClienteResponse(1L, "Cliente 1 Atualizado", "12345678910");
 

@@ -5,10 +5,10 @@ import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 
 public record ClienteRequest(
-        @NotBlank(message = "Nome é obrigatório")
-        String nome,
         @NotBlank(message = "CPF é obrigatório")
-        String cpf,
+        String cpfCnpj,
+        @NotBlank(message = "Nome é obrigatório")
+        String nomeRazaoSocial,
         @NotNull(message = "Situação é obrigatória")
         SituacaoEnum situacao
 ) {
