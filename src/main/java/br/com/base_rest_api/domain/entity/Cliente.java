@@ -1,8 +1,11 @@
 package br.com.base_rest_api.domain.entity;
 
 import br.com.base_rest_api.domain.enums.SituacaoEnum;
+import br.com.base_rest_api.domain.enums.TipoPessoaEnum;
 import jakarta.persistence.*;
 import lombok.Data;
+
+import java.util.List;
 
 @Data
 @Entity
@@ -14,24 +17,39 @@ public class Cliente {
     @Column(name = "ID_CLIENTE")
     private Long idCliente;
 
+    @Enumerated(EnumType.STRING)
+    @Column(name = "TIPO_PESSOA", nullable = false)
+    private TipoPessoaEnum tipoPessoa;
+
     @Column(name = "CPF", nullable = false)
     private String cpfCnpj;
 
     @Column(name = "NOME", nullable = false)
     private String nomeRazaoSocial;
 
+    @Column(name = "CEP")
+    private String cep;
+
+    @Column(name = "LOGRADOURO")
+    private String logradouro;
+
+    @Column(name = "NUMERO")
+    private String numero;
+
+    @Column(name = "COMPLEMENTO")
+    private String complemento;
+
+    @Column(name = "BAIRRO")
+    private String bairro;
+
+    @Column(name = "CIDADE")
+    private String cidade;
+
+    @OneToMany(mappedBy = "cliente", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<ClienteContato> contatos;
+
     @Enumerated(EnumType.STRING)
     @Column(name = "SITUACAO", nullable = false)
     private SituacaoEnum situacao;
 
-    public Cliente() {
-        this.situacao = SituacaoEnum.ATIVO;
-    }
-
-    public Cliente(Long idCliente, String cpfCnpj, String nomeRazaoSocial, SituacaoEnum situacao) {
-        this.idCliente = idCliente;
-        this.cpfCnpj = cpfCnpj;
-        this.nomeRazaoSocial = nomeRazaoSocial;
-        this.situacao = situacao;
-    }
 }

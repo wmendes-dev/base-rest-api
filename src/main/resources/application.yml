@@ -26,6 +26,6 @@ springdoc:
 jwt:
   secret: ${JWT_SECRET:secretParaTesteEmBaseRestApi123456}
   accessToken:
-    expiration: 3600000 # 1 hora
+    expiration: 604800000 # 7 dias
   refreshToken:
     expiration: 604800000 # 7 dias

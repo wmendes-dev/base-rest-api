@@ -5,10 +5,10 @@ import lombok.RequiredArgsConstructor;
 
 @Getter
 @RequiredArgsConstructor
-public enum SituacaoEnum {
+public enum TipoContatoEnum {
 
-    ATIVO("Ativo"),
-    INATIVO("Inativo");
+    EMAIL("E-mail"),
+    TELEFONE("Telefone");
 
     private final String descricao;
 
