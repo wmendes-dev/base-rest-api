@@ -1,6 +1,5 @@
 package br.com.base_rest_api.domain.dto.response.cliente;
 
-import br.com.base_rest_api.domain.enums.SituacaoEnum;
 import br.com.base_rest_api.domain.enums.TipoPessoaEnum;
 
 public record ClientePesquisaResponse(
@@ -8,6 +7,6 @@ public record ClientePesquisaResponse(
         TipoPessoaEnum tipoPessoa,
         String cpfCnpj,
         String nomeRazaoSocial,
-        SituacaoEnum situacao
+        String situacao
 ) {
 }

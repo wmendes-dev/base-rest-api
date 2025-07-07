@@ -2,7 +2,6 @@ package br.com.base_rest_api.domain.dto.request.cliente;
 
 import br.com.base_rest_api.domain.enums.SituacaoEnum;
 import br.com.base_rest_api.domain.enums.TipoPessoaEnum;
-import jakarta.persistence.Column;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 
@@ -15,7 +14,7 @@ public record ClienteRequest(
         String cpfCnpj,
         @NotBlank(message = "Nome é obrigatório")
         String nomeRazaoSocial,
-        @Column(name = "CEP")
+        String nomeFantasia,
         String cep,
         String logradouro,
         String numero,

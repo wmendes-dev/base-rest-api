@@ -21,11 +21,14 @@ public class Cliente {
     @Column(name = "TIPO_PESSOA", nullable = false)
     private TipoPessoaEnum tipoPessoa;
 
-    @Column(name = "CPF", nullable = false)
+    @Column(name = "CPF_CNPJ", nullable = false)
     private String cpfCnpj;
 
-    @Column(name = "NOME", nullable = false)
+    @Column(name = "NOME_RAZAO_SOCIAL", nullable = false)
     private String nomeRazaoSocial;
+
+    @Column(name = "NOME_FANTASIA")
+    private String nomeFantasia;
 
     @Column(name = "CEP")
     private String cep;

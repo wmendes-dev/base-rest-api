@@ -10,6 +10,7 @@ public record ClienteResponse(
         TipoPessoaEnum tipoPessoa,
         String cpfCnpj,
         String nomeRazaoSocial,
+        String nomeFantasia,
         String cep,
         String logradouro,
         String numero,

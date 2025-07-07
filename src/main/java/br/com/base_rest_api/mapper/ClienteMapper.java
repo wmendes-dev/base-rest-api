@@ -15,6 +15,7 @@ import java.util.List;
 @Mapper(componentModel = "spring")
 public abstract class ClienteMapper {
 
+    @Mapping(target = "situacao", source = "situacao.descricao")
     public abstract ClientePesquisaResponse converterParaClientePesquisaResponse(Cliente cliente);
 
     public abstract ClienteResponse converterParaClienteResponse(Cliente cliente);
@@ -30,6 +31,7 @@ public abstract class ClienteMapper {
         cliente.setTipoPessoa(clienteRequest.tipoPessoa());
         cliente.setCpfCnpj(clienteRequest.cpfCnpj());
         cliente.setNomeRazaoSocial(clienteRequest.nomeRazaoSocial());
+        cliente.setNomeFantasia(clienteRequest.nomeFantasia());
         cliente.setCep(clienteRequest.cep());
         cliente.setLogradouro(clienteRequest.logradouro());
         cliente.setNumero(clienteRequest.numero());
