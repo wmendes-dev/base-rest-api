@@ -37,6 +37,7 @@ public abstract class ClienteMapper {
         cliente.setBairro(clienteRequest.bairro());
         cliente.setCidade(clienteRequest.cidade());
         cliente.setTipoPessoa(clienteRequest.tipoPessoa());
+        cliente.setSituacao(clienteRequest.situacao());
 
         List<ClienteContato> clienteContatoList = converterParaClienteContatoList(cliente, clienteRequest.contatos());
         if (cliente.getContatos() != null) {
