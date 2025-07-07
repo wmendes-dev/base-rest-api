@@ -15,6 +15,8 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.List;
+
 @Service
 @RequiredArgsConstructor
 public class ClienteService {
@@ -47,6 +49,16 @@ public class ClienteService {
         this.clienteMapper.converterParaCliente(cliente, clienteRequest);
         cliente = this.clienteRepository.save(cliente);
         return this.clienteMapper.converterParaClienteResponse(cliente);
+    }
+
+    @Transactional
+    public void removerCliente(Long idCliente) {
+        this.clienteRepository.deleteById(idCliente);
+    }
+
+    @Transactional
+    public void removerClientes(List<Long> idClienteList) {
+        this.clienteRepository.deleteAllById(idClienteList);
     }
 
     public Cliente obterClientePorId(Long idCliente) {

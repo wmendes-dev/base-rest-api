@@ -14,6 +14,8 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.lang.Nullable;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/api/v1/clientes")
 @RequiredArgsConstructor
@@ -43,6 +45,18 @@ public class ClienteController {
     public ResponseEntity<ClienteResponse> atualizarCliente(@PathVariable Long idCliente, @RequestBody @Valid ClienteRequest clienteRequest) {
         ClienteResponse clienteResponse = this.clienteService.atualizarCliente(idCliente, clienteRequest);
         return ResponseEntity.ok(clienteResponse);
+    }
+
+    @DeleteMapping("/{idCliente}")
+    public ResponseEntity<Void> removerCliente(@PathVariable Long idCliente) {
+        this.clienteService.removerCliente(idCliente);
+        return ResponseEntity.noContent().build();
+    }
+
+    @PostMapping("/remover-lista")
+    public ResponseEntity<Void> removerClientes(@RequestBody List<Long> idClienteList) {
+        this.clienteService.removerClientes(idClienteList);
+        return ResponseEntity.noContent().build();
     }
 
 }
